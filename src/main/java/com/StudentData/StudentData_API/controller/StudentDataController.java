@@ -19,6 +19,10 @@ public class StudentDataController {
         return repository.save(studentData);
     }
 
+    @PostMapping("/multiple")
+    public List<StudentData> createAllStudentData(@RequestBody List<StudentData> studentData){
+        return repository.saveAll(studentData);
+    }
     @GetMapping
     public List<StudentData> getAllStudentData(){
         return repository.findAll();
